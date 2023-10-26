@@ -4,12 +4,6 @@ services:
     build: .
     container_name: backend
     ports:
-      - "8000:8000"
+      - "127.0.0.1:${HTTP_PORT:-8000}:8000"
     volumes:
-      - .:/usr/src/novo-site
-    networks:
-      - backend
-
-networks:
-  backend:
-    driver: bridge
+      - .:/var/www/html
