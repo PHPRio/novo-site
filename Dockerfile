@@ -13,6 +13,10 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 RUN apt-get update && \
     apt-get install git -y
 
+RUN echo "alias jigsaw=./vendor/bin/jigsaw" >> ~/.bashrc && \
+    echo "alias compile='./vendor/bin/jigsaw build'" >> ~/.bashrc && \
+    /bin/bash -c "source ~/.bashrc"
+
 EXPOSE 8000
 
 ENTRYPOINT [ "./vendor/bin/jigsaw", "serve", "--host=0.0.0.0" ]
