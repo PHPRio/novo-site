@@ -3,7 +3,7 @@
 return [
     'production' => false,
     'baseUrl' => '',
-    'title' => 'Jigsaw',
-    'description' => 'Website description.',
+    'title' => 'PHP Rio',
+    'description' => 'Site do grupo de usuário de PHP do Rio de Janeiro.',
     'collections' => [],
 ];
