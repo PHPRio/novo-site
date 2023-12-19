@@ -35,3 +35,4 @@ RUN echo "alias jigsaw=./vendor/bin/jigsaw" >> ~/.bashrc && \
 
 COPY entrypoint.sh /var/www/scripts/
 ENTRYPOINT [ "bash", "/var/www/scripts/entrypoint.sh" ]
+WORKDIR /var/www/html
