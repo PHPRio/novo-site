@@ -29,9 +29,9 @@ RUN chmod uga+x /usr/local/bin/install-php-extensions && sync \
     @composer \
     && rm /usr/local/bin/install-php-extensions
 
-RUN echo "alias jigsaw=./vendor/bin/jigsaw" >> ~/.bashrc && \
-    echo "alias compile='./vendor/bin/jigsaw build'" >> ~/.bashrc && \
-    /bin/bash -c "source ~/.bashrc"
+RUN echo "alias jigsaw=./vendor/bin/jigsaw" >> /etc/bash.bashrc && \
+    echo "alias compile='./vendor/bin/jigsaw build'" >> /etc/bash.bashrc && \
+    /bin/bash -c "source /etc/bash.bashrc"
 
 COPY entrypoint.sh /var/www/scripts/
 ENTRYPOINT [ "bash", "/var/www/scripts/entrypoint.sh" ]
