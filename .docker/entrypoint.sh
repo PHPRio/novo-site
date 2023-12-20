@@ -4,9 +4,12 @@
 usermod --non-unique --uid "${HOST_UID}" www-data
 groupmod --non-unique --gid "${HOST_GID}" www-data
 
-
 if [ ! -d "vendor" ]; then
   composer install
 fi
 
-./vendor/bin/jigsaw serve --host=0.0.0.0
+if [ ! -d "node_modules" ]; then
+    npm ci
+fi
+
+npm run watch
